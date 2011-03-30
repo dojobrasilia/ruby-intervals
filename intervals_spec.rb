@@ -13,5 +13,12 @@ describe 'intervals' do
        generate_intervals([100,103]).should == [[100, 100],[103, 103]]
     end
     
+    it 'should return two binary intervals' do 
+       generate_intervals([100,101,103,104]).should == [[100, 101],[103, 104]]
+    end
+        it 'should return complex intervals' do 
+       generate_intervals([50,51,52,100,101,103,104]).should == [[50,52],[100, 101],[103, 104]]
+    end
+
 end
 

@@ -1,11 +1,16 @@
 def generate_intervals(values)
     
-    intervals = [[values.first,values.last]]
+    intervals = [[values.first,values.first]]
     
-    if(values.last-values.first > 1)
-       intervals = [[values.first,values.first],[values.last, values.last]]
+    for i in 1..values.size-1 do
+        if(values[i]-values[i-1] > 1)
+            intervals << [values[i], values[i]]
+        else
+            intervals.last[1] = values[i]
+        end
+        
     end
-    
-    intervals
+
+    return intervals
     
 end
