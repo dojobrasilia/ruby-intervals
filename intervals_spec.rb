@@ -16,5 +16,10 @@ describe 'intervals' do
     it 'should return an interval with 4 values in sequence unsorted' do 
        generate_intervals([100,101,99,102]).should == [[99, 102]]
     end
+    
+    it 'should return two unary intervals with 1 value each' do 
+       generate_intervals([100,103]).should == [[100, 100],[103, 103]]
+    end
+    
 end
 
